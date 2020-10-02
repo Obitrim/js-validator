@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Validator example</title>
+
+	<style>
+		*, *::before, *::after {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		form {
+			max-width: 450px;
+			margin: 0 auto;
+			margin-top: 1rem;
+		}
+
+		.FormGroup {
+			margin: 1.4rem 0;
+		}
+
+		.FormGroup__Input {
+			display: block;
+			width: 100%;
+			padding: 0.5rem 1rem;
+			margin: 0.5rem 0 0.1rem;
+		}
+
+		.FormGroup__ErrorLabel {
+			color: red;
+		}
+	</style>
+	<script src="./main.js" defer></script>
+</head>
+<body>
+	<form action="#" id="formOne" novalidate>
+		<div class="FormGroup">
+			<label for="name">Name</label>
+			<input 
+				type="text" 
+				class="FormGroup__Input"
+				name="username"
+				data-v-input  
+				minlength="4" 
+				required
+			/>
+			<span class="FormGroup__ErrorLabel"></span>
+		</div>
+		<div class="FormGroup">
+			<label for="age">Age</label>
+			<input 
+				type="number" 
+				name="age"
+				class="FormGroup__Input"
+				data-v-input
+				max="200"
+				pattern="[0-9]"
+				required
+			/>
+			<span class="FormGroup__ErrorLabel"></span>
+		</div>
+		<button type="submit">Submit</button>
+	</form>
+	<form action="#" id="formTwo" novalidate>
+		<div class="FormGroup">
+			<label for="name">Name</label>
+			<input 
+				type="text" 
+				class="FormGroup__Input"
+				name="username"
+				data-v-input  
+				minlength="4" 
+				required
+			/>
+			<span class="FormGroup__ErrorLabel"></span>
+		</div>
+		<div class="FormGroup">
+			<label for="age">Age</label>
+			<input 
+				type="number" 
+				name="age"
+				class="FormGroup__Input"
+				data-v-input 
+				max="200"
+				pattern="[0-9]"
+				required
+			/>
+			<span class="FormGroup__ErrorLabel"></span>
+		</div>
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
